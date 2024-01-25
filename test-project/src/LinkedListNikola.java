@@ -1,4 +1,3 @@
-
 public class LinkedListNikola {
 
 	private Node head;
@@ -83,6 +82,62 @@ public class LinkedListNikola {
 		lenght--;
 		return temp;
 	}
+
+	public Node get(int index) {
+		Node temp= this.head;
+		if(index <0 || index>= lenght) {
+			System.out.println("Invalid " + index);
+			return null;
+		}
+		for(int i = 0; i<=index; i++) {
+			temp = temp.next;
+		}
+		System.out.println("Returned element " + temp.value);
+		return temp;
+		
+	}
+	
+	public boolean set(int index, int value) {
+		if (index < 0 || index >= lenght) {
+			System.out.println("IMPOSSIBLE !!!" + index);
+			return false;
+		}
+		Node temp = get(index);
+		if(temp != null) {
+			temp.value = value;
+			return true;
+		}
+
+		return false;
+	}
+	
+	/*
+	 * insert a new node over a partical node
+	 */
+	public boolean insert(int index,int value) {
+		Node newNode = new Node(value);
+		if(index <0 || index > lenght) {
+			System.out.println("Invalid " + index);
+			return false;
+		}
+		if(index == 0) {
+			prependNode(value);
+			return true;
+		}
+		if(lenght == index) {
+			appendNode(value);
+			return true;
+		}
+		//ovo vraca node prethodni od indexa dakel dodje npr do 5 elementa on ce ti vrati 4
+		Node temp = get(index - 1);
+		//moj novi node ce da pokazuje ka sledecem
+		newNode.next = temp.next;
+		//ovaj node na tom indexu ce da pokazuje na tom novom node
+		temp.next = newNode;
+		lenght++;
+		return true;
+	}
+	
 	
 	
 	public void printList() {
