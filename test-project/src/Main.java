@@ -32,6 +32,7 @@ public class Main {
 
 		linkedListNikola.insert(1, 987);
 		
+		linkedListNikola.reverse();
 		
 		linkedListNikola.getHead();
 		linkedListNikola.getTail();

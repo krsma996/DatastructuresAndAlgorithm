@@ -140,6 +140,33 @@ public class LinkedListNikola {
 	
 	
 	
+	public void reverse() {
+		Node tempHead = this.head;
+		head = tail;
+		tail = tempHead;
+		
+		Node prethodniNode = null;
+		Node sledbeniNode = tempHead.next;
+		
+		for(int i = 0; i< lenght; i++) {
+			sledbeniNode = tempHead.next;
+					tempHead.next = prethodniNode;
+					prethodniNode = tempHead; 
+					tempHead = sledbeniNode;
+		}
+		
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	public void printList() {
 		Node temp = head;
 		while (temp != null) {
