@@ -11,6 +11,12 @@ public class MainDoubleLinkedList {
 		
 		myDouble.removeLastNode();
 		
+		myDouble.prependNode(456);
+		System.out.println(myDouble.get(2).value);
+//		myDouble.remoFirstNode();
+//		myDouble.remoFirstNode();
+//		myDouble.remoFirstNode();
+//		myDouble.remoFirstNode();
 		myDouble.getTail();
 		myDouble.getHead();
 		myDouble.getLenght();
