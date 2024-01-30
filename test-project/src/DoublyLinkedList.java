@@ -31,7 +31,8 @@ public class DoublyLinkedList {
 		}
 //		Kao iz single linked liste ovo ce da radi lepo 
 // WHAT IS THE MOST EFFICENT WAY TO ACCCES THE ELEMENTS ??
-// imas pointer od taila koji ti pokazuje za nazad sto znaci listu podeli na pola i pocni spreda samo obrni for petlje
+// imas pointer od taila koji ti pokazuje za nazad sto znaci listu podeli na pola 
+// a ako ti je index veci od polovine e onda ces poceti od kraja petlje tj od taila 
 //		for(int i = 0; i<=index; i++) {
 //			temp = temp.next;
 //		}
