@@ -1,5 +1,3 @@
-import java.util.Iterator;
-
 public class DoublyLinkedList {
 
 	Node tail;
@@ -12,20 +10,31 @@ public class DoublyLinkedList {
 		this.head = newNode;
 		this.lenght++;
 	}
-	
+
+	class Node {
+
+		int value;
+		Node next;
+		Node previous;
+
+		public Node(int value) {
+			this.value = value;
+		}
+	}
+
 	public Node get(int index) {
 		Node temp = this.head;
-		if(index < 0 || index >= lenght ) {
+		if (index < 0 || index >= lenght) {
 			System.out.println("No its not possible my friend");
 			return null;
 		}
-		if(index < lenght/2) {
-			for(int i = 0; i<=index;i++) {
+		if (index < lenght / 2) {
+			for (int i = 0; i <= index; i++) {
 				temp = temp.next;
 			}
-		}else {
+		} else {
 			temp = tail;
-			for(int j = lenght-1; j >=index;j--) {
+			for (int j = lenght - 1; j >= index; j--) {
 				temp = temp.previous;
 			}
 		}
@@ -38,8 +47,7 @@ public class DoublyLinkedList {
 //		}
 //		System.out.println("Returned element " + temp.value);
 		return temp;
-		
-		
+
 	}
 
 	public void appendNode(int value) {
@@ -57,35 +65,35 @@ public class DoublyLinkedList {
 
 	public void prependNode(int value) {
 		Node prependedNode = new Node(value);
-		if(head == null || tail == null) {
+		if (head == null || tail == null) {
 			head = prependedNode;
 			tail = prependedNode;
 			lenght = 1;
-		}else {
+		} else {
 			prependedNode.next = this.head;
 			this.head.previous = prependedNode;
 			head = prependedNode;
 		}
 		lenght++;
 	}
-	
+
 	public Node remoFirstNode() {
-		if(lenght == 0) {
+		if (lenght == 0) {
 			throw new IndexOutOfBoundsException("Out of bound buddy");
 		}
 		Node temp = head;
 		if (lenght == 1) {
 			head = null;
 			tail = null;
-		}else {
+		} else {
 			head = head.next;
 			head.previous = null;
-			temp.next = null;	
-		}		
+			temp.next = null;
+		}
 		lenght--;
 		return temp;
 	}
-	
+
 	public Node removeLastNode() {
 		if (lenght == 0) {
 			return null;
@@ -121,11 +129,9 @@ public class DoublyLinkedList {
 //		
 //		return currentHead;
 	}
-	
-	
-	
+
 	public boolean set(int index, int value) {
-		if (index < 0 || index >= lenght) {
+		if (index < 0 || index > lenght) {
 			System.out.println("IMPOSSIBLE !!!" + index);
 			return false;
 		}
@@ -136,17 +142,53 @@ public class DoublyLinkedList {
 		}
 		return false;
 	}
-	
 
-	class Node {
-
-		int value;
-		Node next;
-		Node previous;
-
-		public Node(int value) {
-			this.value = value;
+	public boolean insert(int index, int value) {
+		if (index < 0 || index >= lenght) {
+			System.out.println("Invalid i cannot insert at this posisiton my man =  " + index);
+			return false;
 		}
+		Node insertNewNode = new Node(value);
+		if (lenght == 0) {
+			prependNode(value);
+			return true;
+		}
+		if (index > lenght) {
+			appendNode(value);
+			return true;
+		}
+		Node tempPrevious = get(index - 1);
+		Node after = tempPrevious.next;
+
+		tempPrevious.next = insertNewNode;
+		insertNewNode.previous = tempPrevious;
+		insertNewNode.next = after;
+		after.previous = insertNewNode;
+		lenght++;
+		return true;
+	}
+
+	public Node remove(int index) {
+		if (index < 0 || index >= lenght) {
+			return null;
+		}
+		if (index == 0) {
+			return remoFirstNode();
+		}
+		if (index == lenght - 1) {
+			return removeLastNode();
+		}
+
+		Node currentNode = get(index);
+		Node temp = currentNode.next;
+
+		temp.next.previous = temp.previous;
+		temp.previous.next = temp.next;
+		temp.next = null;
+		temp.previous = null;
+		lenght--;
+		return temp;
+
 	}
 
 	public void printList() {
