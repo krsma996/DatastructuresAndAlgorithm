@@ -17,6 +17,10 @@ public class MainDoubleLinkedList {
 //		myDouble.remoFirstNode();
 //		myDouble.remoFirstNode();
 //		myDouble.remoFirstNode();
+		
+		System.out.println(myDouble.set(1, 4500));
+		System.out.println(myDouble.set(2, 3500));
+		
 		myDouble.getTail();
 		myDouble.getHead();
 		myDouble.getLenght();

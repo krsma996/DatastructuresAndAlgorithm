@@ -121,6 +121,22 @@ public class DoublyLinkedList {
 //		
 //		return currentHead;
 	}
+	
+	
+	
+	public boolean set(int index, int value) {
+		if (index < 0 || index >= lenght) {
+			System.out.println("IMPOSSIBLE !!!" + index);
+			return false;
+		}
+		Node newNode = get(index);
+		if (newNode != null) {
+			newNode.value = value;
+			return true;
+		}
+		return false;
+	}
+	
 
 	class Node {
 
