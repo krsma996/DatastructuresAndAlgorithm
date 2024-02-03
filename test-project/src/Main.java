@@ -20,7 +20,7 @@ public class Main {
 	//	linkedListNikola.prependNode(305);
 		
 
-//		linkedListNikola.removeLastNode();
+		linkedListNikola.removeLastNode();
 //		linkedListNikola.removeLastNode();
 //
 //		linkedListNikola.removeFirstItem();
@@ -32,7 +32,10 @@ public class Main {
 
 		linkedListNikola.insert(1, 987);
 		
+		linkedListNikola.remove(0);
+		
 		linkedListNikola.reverse();
+		
 		
 		linkedListNikola.getHead();
 		linkedListNikola.getTail();

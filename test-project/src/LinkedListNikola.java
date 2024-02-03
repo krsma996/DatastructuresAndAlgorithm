@@ -110,25 +110,6 @@ public class LinkedListNikola {
 
 		return false;
 	}
-	 public Node remove(int index) {
-	        if (index < 0 || index >= lenght) {
-	        	return null;
-	        }
-	        if (index == 0) {
-	        	return removeFirstItem();
-	        }
-	        if (index == lenght - 1) {
-	        	return removeLastNode();
-	        }
-
-	        Node prev = get(index - 1);
-	        Node temp = prev.next;
-
-	        prev.next = temp.next;
-	        temp.next = null;
-	        lenght--;
-	        return temp;
-	    }
 	
 	/*
 	 * insert a new node over a partical node
@@ -148,16 +129,35 @@ public class LinkedListNikola {
 			return true;
 		}
 		//ovo vraca node prethodni od indexa dakel dodje npr do 5 elementa on ce ti vrati 4
-		Node before = get(index - 1);
+		Node temp = get(index - 1);
 		//moj novi node ce da pokazuje ka sledecem
-		newNode.next = before.next;
+		newNode.next = temp.next;
 		//ovaj node na tom indexu ce da pokazuje na tom novom node
-		before.next = newNode;
+		temp.next = newNode;
 		lenght++;
 		return true;
 	}
 	
-	
+	public boolean remove(int index) {
+		if(index <0 || index > lenght) {
+			System.out.println("INVALIDDDDDD!!!!!!!!!" + index);
+			return false;
+		}	
+		if(index == 0) {
+			removeFirstItem();
+			return true; 
+		}
+		if(lenght == index - 1) {
+			removeLastNode();
+			return true;
+		}
+		Node prev = get(index -1);
+		Node temp = prev.next;	
+		prev.next = temp.next;
+		temp.next = null;
+		lenght --;
+		return true;	
+	}
 	
 	public void reverse() {
 		Node tempHead = this.head;
@@ -175,16 +175,6 @@ public class LinkedListNikola {
 		}
 		
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	
 	public void printList() {
 		Node temp = head;
