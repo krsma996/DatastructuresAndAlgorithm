@@ -10,6 +10,9 @@
 				 * sekundi a uzeo manje memorijskog resursa ako po tome poredim to je onda (
 				 * Space Complexity )
 				 * 
+				  Time complexiti se ne meri po vremenu jer ako bi uzeo isti taj kod i pokrenuo ga na jacoj masini
+				  i ako ga on izvrsi za duplo manje vremena to znaci da je kod dobar to znaci da je kompijuter samo bolji
+				  Dakle merise po broju operacija kome je potrebno da izvrzi neki zadatak
 				 */
 
 				/*
@@ -17,76 +20,220 @@
 				 * 
 				 * Omega , Theta , Omicron (poznat kao big O)
 				 * 
-				 * ako imamo niz od 7 elementa {1,2,3,4,5,6,7} Omega je najbolji slucaj ako bi
-				 * smo u nizu trazili 1 element Theta je osrednji ako bi smo trazili 4 Omicron
-				 * je najgori slucaj kada trazimo zadnji element
+ -------------------------------------------------------- PRIMER  --------------------------------------------------------					
+				Imamo niz od 7 elemenata: {1, 2, 3, 4, 5, 6, 7}.
+
+				Omega (najbolji slučaj):
+
+				Najbolji slučaj se dešava kada tražimo prvi element u nizu, što je 1. Pretraga završava odmah, nakon jedne operacije.
+
+				Theta (osrednji slučaj):
+
+				Osrednji slučaj je kada tražimo srednji element niza, što je 4. 
+				Pretraga zahteva nekoliko koraka, ali nije ni previše kratka ni previše duga.
+
+				Omicron (najgori slučaj):
+
+				Najgori slučaj se dešava kada tražimo poslednji element u nizu, što je 7. 
+				U ovom slučaju, pretraga prolazi kroz ceo niz, element po element, dok ne pronađe tražen
+				
+				
+				O(n) – Linearna složenost
+				Zamislimo funkciju printNumbers(n) koja sadrži for petlju
+				
+				void printNumbers(int n) {
+  			 	 for (int i = 0; i < n; i++) {
+        			System.out.println(i);
+   				 }
+				}
+				
+				Kada pokrenemo ovu funkciju, petlja se izvršava n puta. Na primer, ako je n = 10, 
+				petlja će obraditi 10 elemenata i svaka iteracija poziva System.out.println(i).
+
+				Na grafu, horizontalna osa (x-osa) predstavlja broj elemenata n, 
+				dok vertikalna osa (y-osa) predstavlja broj operacija koje se izvršavaju.
+				Operacije u ovoj funkciji rastu proporcionalno broju elemenata n. Ako n raste, broj operacija takođe raste.
+
+				Zato kažemo da je složenost ove funkcije O(n), jer je broj operacija direktno proporcionalan broju unosa (n).
+
+				Na primer:
+				Ako korisnik pozove printNumbers(1000), petlja će morati da obradi svih 1000 elemenata, 
+				bez obzira na njihov sadržaj. Zato ne možemo unapred znati koliko će vremena funkcija trajati – 
+				zavisi od veličine ulaznih podataka.
+				
+	--------------------------------------- DROP HE CONSTANTS --------------------------------------------------------
 				 * 
-				 * a kada kazemo O(n) imamo npr for petlju
+				Prilikom analize vremenske složenosti algoritama koristeći Big O notaciju, često koristimo pravilo "Drop the Constant". 
+				Suština ovog pravila je da zanemarimo konstante i manje faktore u izrazu vremenske složenosti, 
+				jer oni nisu od suštinskog značaja za analizu rasta vremena izvršavanja u odnosu na veličinu ulaza.
+
+				Primer:
+				Ako imamo algoritam koji zahteva 2n koraka, u Big O notaciji to se izražava kao O(n). 
+				Razlog je taj što konstanta 2 ne utiče na analizu rasta – kako se ulaz povećava, konstante postaju zanemarljive. 
+				Fokus je na najdominantnijem faktoru koji određuje ponašanje algoritma za velike ulaze.
+				
+				void printNumbers(int n) {
+    				// Prva for petlja
+   				 for (int i = 0; i < n; i++) {
+     				   System.out.println(i);
+    			}
+    			// Druga for petlja
+    			for (int i = 0; i < n; i++) {
+        				System.out.println(i);
+    			}
+				}
+				
+				Prva petlja:
+				Izvršava se n puta. Svaka iteracija poziva System.out.println(i).
+
+				Druga petlja:
+				Takođe se izvršava n puta, nezavisno od prve.
+				
+				Ukupan broj operacija je n + n = 2n. Na prvi pogled, vremenska složenost izgleda kao O(2n). 
+				Međutim, prema pravilu "Drop the Constant", 
+				konstanta 2 se zanemaruje, 
+				jer ne utiče na rast za velike vrednosti n.
+				
+				
+				Cak i da imas 500 for petlji tu i dalje bi bilo o(n) jer same te konstante neuticu na analizu rasta
+				fokus je iskljucivo na najdominatnijem izvoru a to je N 
+				
+				
+				
+				
+				
+				
+				  
+					O(n²) označava kvadratnu vremensku složenost. Ova složenost nastaje kada algoritam sadrži dvostruke ugnježdene petlje,
+					gde svaka petlja prolazi kroz istu veličinu ulaznih podataka n.
+					To znači da broj operacija raste kvadratno sa povećanjem veličine ulaznih podatak
+					
+					Kada se javlja?
+					O(n²) složenost je česta u algoritmima koji koriste dva prolaza kroz podatke, 
+					poput algoritama za sortiranje kao što su:
+
+					Bubble Sort
+					Insertion Sort
+					Selection Sort
+					
+					
+					void printPairs(int n) {
+    				for (int i = 0; i < n; i++) {          // Prva petlja (n iteracija)
+        				for (int j = 0; j < n; j++) {      // Druga petlja (n iteracija za svaku iteraciju prve petlje)
+          						 System.out.println("(" + i + ", " + j + ")");
+        			}
+   				 }
+				}
+					
+					
+				
+---------------------------------------Pravilo: "Drop Non-Dominants"---------------------------------------------------------------	
+					
+					
+				Kada analiziramo vremensku složenost algoritma koristeći Big O notaciju, 
+				fokusiramo se samo na najdominantniji deo vremenske složenosti. 
+				Manje dominantni delovi se zanemaruju jer imaju zanemarljiv uticaj na rast vremena izvršavanja za velike ulaze	
+					
+				void processElements(int n) {
+   				 // Prva ugnježdena petlja
+    			for (int i = 0; i < n; i++) {
+       			 for (int j = 0; j < n; j++) {
+       		     System.out.println("Processing pair: " + i + ", " + j);
+       			 }
+   				 }
+
+   				 // Posebna for petlja
+   					 for (int k = 0; k < n; k++) {
+     		  	 System.out.println("Processing element: " + k);
+   					 }
+				}	
+				1.)
+				Ugnježdene petlje:
+				Izvršavaju se n * n = n² puta. Ovo je dominantan deo algoritma.
+				2.)
+				Posebna petlja:
+				Izvršava se samo n puta, što je znatno manje od n².	
+				
+				Zaključak:
+				Ukupan broj operacija je približno n² + n. Međutim, prema pravilu "Drop Non-Dominants", 
+				manji faktor (n) se zanemaruje. Fokusiramo se na dominantni deo (n²), pa je vremenska složenost ovog algoritma:
+				O(n²)
+					
+------------------------------------------------------------------------------------------------------------------------------------------------------------					
 				 * 
-				 * printNumber(10){ for(int i < 0; i<n; i++{ syso(i)
+				 * Na primer, ako su vremenske sloÅ¾enosti ugnjeÅ¾denih petlji O(n^2) i O(n), a
+				 * vremenska sloÅ¾enost posebne for petlje O(n), onda biste izrazili ukupnu
+				 * vremensku sloÅ¾enost kao O(n^2 + n). Kada primenite pravilo
+				 * "Drop the non-dominants", moÅ¾ete zanemariti manje dominantni Ä�lan, tj. O(n),
+				 * i izraziti vremensku sloÅ¾enost kao O(n^2), fokusirajuÄ‡i se na najdominantniji
+				 * Ä�lan.
 				 * 
-				 * i na grafu kada bi prikazili donja linija je N a gornja je broj operacija
-				 * koja se izvrsava u for petlji mi 10 puta izvrsavamo tu operaciju
+				 * Ovo je, naravno, opÅ¡ti pristup i zavisi od konkretnog algoritma i analize
+				 * performansi. VaÅ¾no je razmotriti kako se algoritam ponaÅ¡a u odnosu na
+				 * veliÄ�inu ulaza i kako se razliÄ�iti delovi algoritma doprinose vremenskoj
+				 * sloÅ¾enosti
+
+
+
+				 * O(1): Vremenska sloÅ¾enost je konstantna i ne zavisi od veliÄ�ine ulaza. To je
+				 * najefikasnije vreme izvrÅ¡avanja.
 				 * 
-				 * pravilo "Drop the constant" je jedno od pravila koja se često koristi
-				 * prilikom analize vremenske složenosti algoritama koristeći Big O notaciju.
-				 * Suština ovog pravila je da se zanemare konstante i manji faktori prilikom
-				 * izražavanja vremenske složenosti.
+				 * O(n): Vremenska sloÅ¾enost je linearna i raste proporcionalno sa veliÄ�inom
+				 * ulaza n. Å to je n veÄ‡e, to je i vreme izvrÅ¡avanja duÅ¾e.
 				 * 
-				 * Na primer, ako imate algoritam koji zahteva 2n koraka, u Big O notaciji biste
-				 * to izrazili kao O(n). S obzirom na to da konstanta 2 nije od suštinskog
-				 * značaja prilikom analize rasta vremena izvršavanja u odnosu na veličinu
-				 * ulaza, ona se jednostavno zanemaruje
+				 * O(n^2): Vremenska sloÅ¾enost je kvadratna, Å¡to znaÄ�i da vreme izvrÅ¡avanja
+				 * raste kvadratno u odnosu na veliÄ�inu ulaza. Ovaj tip vremenske sloÅ¾enosti je
+				 * Ä�esto prisutan kod algoritama sa dva ugnjeÅ¾dena prolaza kroz podatke.
 				 * 
-				 * 
-				 * Notacija O(n^2) označava kvadratnu vremensku složenost Na primer, ako imate
-				 * petlju koja prolazi kroz n elemenata i unutar nje još jednu petlju koja
-				 * prolazi kroz isti skup elemenata, tada biste mogli reći da algoritam ima
-				 * vremensku složenost O(n^2). To je često prisutno kod algoritama koji koriste
-				 * dva ugnježdena prolaza kroz podatke, poput algoritma za sortiranje kao što je
-				 * Bubble sort, Insertion sort ili Selection sort.
-				 * 
-				 * 
-				 * ako imate jednu metodu koja sadrži tri for petlje, od kojih su dve ugnježdene
-				 * (jedna unutar druge), i jednu posebnu for petlju, i ako analiza pokazuje da
-				 * su ugnježdene petlje dominantnije u pogledu vremenske složenosti, onda možete
-				 * zanemariti posebnu for petlju kada izražavate vremensku složenost algoritma
-				 * koristeći Big O notaciju.
-				 * 
-				 * Na primer, ako su vremenske složenosti ugnježdenih petlji O(n^2) i O(n), a
-				 * vremenska složenost posebne for petlje O(n), onda biste izrazili ukupnu
-				 * vremensku složenost kao O(n^2 + n). Kada primenite pravilo
-				 * "Drop the non-dominants", možete zanemariti manje dominantni član, tj. O(n),
-				 * i izraziti vremensku složenost kao O(n^2), fokusirajući se na najdominantniji
-				 * član.
-				 * 
-				 * Ovo je, naravno, opšti pristup i zavisi od konkretnog algoritma i analize
-				 * performansi. Važno je razmotriti kako se algoritam ponaša u odnosu na
-				 * veličinu ulaza i kako se različiti delovi algoritma doprinose vremenskoj
-				 * složenosti
-				 * 
-				 * 
-				 * 
-				 * 
-				 * 
-				 * 
-				 * 
-				 * 
-				 * 
-				 * 
-				 * 
-				 * O(1): Vremenska složenost je konstantna i ne zavisi od veličine ulaza. To je
-				 * najefikasnije vreme izvršavanja.
-				 * 
-				 * O(n): Vremenska složenost je linearna i raste proporcionalno sa veličinom
-				 * ulaza n. Što je n veće, to je i vreme izvršavanja duže.
-				 * 
-				 * O(n^2): Vremenska složenost je kvadratna, što znači da vreme izvršavanja
-				 * raste kvadratno u odnosu na veličinu ulaza. Ovaj tip vremenske složenosti je
-				 * često prisutan kod algoritama sa dva ugnježdena prolaza kroz podatke.
-				 * 
-				 * O(log N) = Vremenska složenost O(log N) se odnosi na algoritme čije vreme
-				 * izvršavanja raste logaritamski u odnosu na veličinu ulaza N. Ukljucuje
-				 * Linearna pretraga(svaki element prolazimo da bi smo nasli vrednost) i Binarna (podeli i vladaj ) delimo listu na pola sto je mnogo dobro
+				 * O(log N) = Vremenska sloÅ¾enost O(log N) se odnosi na algoritme Ä�ije vreme
+				 * izvrÅ¡avanja raste logaritamski u odnosu na veliÄ�inu ulaza N. Ukljucuje
+				 * Linearna pretraga(svaki element prolazimo da bi smo nasli vrednost) 
+				   i primenjuje se strategija divide and conquer sto znaci cepkamo niz na pola svaki put da dodjemo da zeljenog elementa
+				   logaritamski to znaci (O log2na8 ? = 3 sto znaci kad se klade koliko puta se 8 delu sa dvojkom da bi dosao do 1
+				   pa 3 puta 8/2 = 4 / 2 = 2 / 2 = 1   3 operacije.
+				   
+				   
+				   Šta znači Θ(log(n))?
+					Θ(log(n)) označava algoritme kod kojih se problem smanjuje na pola (ili drugim delovima)
+					 pri svakoj iteraciji ili rekurzivnom pozivu. 
+					 Ova složenost je uobičajena kod algoritama koji koriste podelu problema na manje delove, 
+					 gde svaki korak značajno smanjuje veličinu problema.
+				   
+				   
+				   
+		--------------------------------- DIFFRENT TERMS FOR DIFFRENT INPUTS --------------------------------------------------------
+		
+			Kada algoritam ima više različitih ulaza, vremenska složenost se analizira posebno za svaki ulaz. 
+			Za svaki ulaz koristimo zaseban faktor u Big O notaciji.
+
+				   void process(int a, int b) {
+    				for (int i = 0; i < a; i++) { 
+      				  System.out.println("Processing n: " + i);
+    				}
+   					 for (int j = 0; j < b; j++) {
+       				 System.out.println("Processing m: " + j);
+    				}
+				}
+				
+				ovde Ne mozemo da kazemo da su i a i b isto da su oboje O(n)
+				jer a moze da bude broj 1 
+				a b moze da bude 10000000
+				i onda bi to bilo totalno drugacije izvrsavanje sto znaci
+				
+				O(a + b ) nema drop the constats 
+				
+				a da je tipa za for petlju nesto ovo da su ugnjezdene
+				
+				 void process(int a, int b) {
+    				for (int i = 0; i < a; i++) { 
+      				  System.out.println("Processing n: " + i);
+      				  for (int j = 0; j < b; j++) {
+       				 System.out.println("Processing m: " + j);
+    				}
+    				}
+   					 
+				}
+				   
+				   onda bi ti bilo O(a *b );
 				 */
 				

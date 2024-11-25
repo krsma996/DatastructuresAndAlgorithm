@@ -1,11 +1,20 @@
-import java.util.Iterator;
-
 public class DoublyLinkedList {
 
 	Node tail;
 	Node head;
 	int lenght;
 
+	class Node {
+
+		int value;
+		Node next;
+		Node previous;
+
+		public Node(int value) {
+			this.value = value;
+		}
+	}
+	
 	public DoublyLinkedList(int newValue) {
 		Node newNode = new Node(newValue);
 		this.tail = newNode;
@@ -122,16 +131,6 @@ public class DoublyLinkedList {
 //		return currentHead;
 	}
 
-	class Node {
-
-		int value;
-		Node next;
-		Node previous;
-
-		public Node(int value) {
-			this.value = value;
-		}
-	}
 
 	public void printList() {
 		Node temp = head;

@@ -1,4 +1,3 @@
-
 public class Main {
 
 	public static void main(String[] args) {
@@ -11,6 +10,9 @@ public class Main {
 		int broj1 = 15;
 		int broj2 = 23;
 		int broj3 = 150;
+		
+		
+	
 		
 		
 		linkedListNikola.appendNode(broj1);

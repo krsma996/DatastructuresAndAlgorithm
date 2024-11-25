@@ -2,13 +2,13 @@ public class LinkedListNikola {
 
 	private Node head;
 	private Node tail;
-	private int lenght;
+	private int lenght = 0;
 
 	public LinkedListNikola(int newValue) {
 		Node newNode = new Node(newValue);
-		head = newNode;
-		tail = newNode;
-		lenght = 1;
+		this.head = newNode;
+		this.tail = newNode;
+		this.lenght++;
 	}
 
 	class Node {
@@ -156,16 +156,6 @@ public class LinkedListNikola {
 		}
 		
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	
 	public void printList() {
 		Node temp = head;
