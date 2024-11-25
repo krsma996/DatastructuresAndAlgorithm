@@ -38,11 +38,6 @@ public class DoubleLinkedListPodsecanje {
 		}
 	}
 
-
-	
-	
-	
-	
 	
 	public void printList() {
 		Node temp = this.head;
