@@ -21,6 +21,22 @@ public class DoubleLinkedListPodsecanje {
 			this.value = value;
 		}
 	}
+	
+	
+	
+	public void append(int value) {
+		Node newNode = new Node(value);
+		if(head == null || tail == null ) {
+			head = newNode;
+			tail = newNode;
+			lenght++;
+		}else {
+			tail.next = newNode;
+			newNode.previous = this.tail;
+			tail = newNode;
+			lenght++;
+		}
+	}
 
 
 	
