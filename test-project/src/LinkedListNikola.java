@@ -138,7 +138,26 @@ public class LinkedListNikola {
 		return true;
 	}
 	
-	
+	public boolean remove(int index) {
+		if(index <0 || index > lenght) {
+			System.out.println("INVALIDDDDDD!!!!!!!!!" + index);
+			return false;
+		}	
+		if(index == 0) {
+			removeFirstItem();
+			return true; 
+		}
+		if(lenght == index - 1) {
+			removeLastNode();
+			return true;
+		}
+		Node prev = get(index -1);
+		Node temp = prev.next;	
+		prev.next = temp.next;
+		temp.next = null;
+		lenght --;
+		return true;	
+	}
 	
 	public void reverse() {
 		Node tempHead = this.head;
