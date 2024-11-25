@@ -39,6 +39,44 @@ public class DoubleLinkedListPodsecanje {
 	}
 
 	
+	public Node removeLast() {
+		Node tempNode = this.tail;
+		if (head == null || tail == null) {
+			System.out.println("My linked list is Empty ");
+			return null;
+		}
+		tail = tail.previous;
+		tail.next = null;
+		tempNode.previous = null;
+		lenght--;
+		if(lenght == 0) {
+			head = null;
+			tail = null;
+		}
+		return tempNode;
+		
+	}
+	
+	public Node removeFirst() {
+		Node currentNode = this.head;
+		if (head == null || tail == null) {
+			System.out.println("My linked list is Empty ");
+			return null;
+		}
+		head = head.next;
+		head.previous = null;
+		currentNode.next = null;
+		return currentNode;
+	}
+	
+	public void prependNode(int value) {
+		Node newNode = new Node(value);
+		Node temp = this.head;
+		newNode.next = temp;
+		temp.previous = newNode;
+		this.head = newNode;
+	}
+	
 	public void printList() {
 		Node temp = this.head;
 		while(temp !=null) {
@@ -47,6 +85,10 @@ public class DoubleLinkedListPodsecanje {
 			
 			
 		}
+	}
+	
+	public Node get(int index) {
+		return null;//sad te rokam mala
 	}
 	
 	
