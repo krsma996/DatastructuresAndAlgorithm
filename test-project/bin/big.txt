@@ -1,3 +1,16 @@
+	What is DSA and ALGORTIMS ?
+	
+	DSA -> Na visikom nivou samo nacin organizovanja tvojih podataka  u vecini slucajeva svi ti algoritmi su
+	vec implemetirani ali dobro je znati kako svaka ta struktura podataka barem one najpoznatije rade ispod haoube
+	jer na taj nacin ces znati kako efikasno da pises programe
+	
+	Zasto ih je dobro znati ?
+	Da bi mogao da pises program na logican nacin koji ima smisla i koji je efikasan jako
+	
+	A sta je algoritam? 
+	da se izrazim nekakav NIZ koraka koji treba da se odradi da bi se program izvrsio ( PROSTO OBJASNJENJE )
+	sto znaci potrebni su nam neki LOGICKI koraci bitno nam je KOLIKO njih da bi smo uspesno napravili program koji se izvrsava
+	
 	// What is big O ?
 
 				/*
