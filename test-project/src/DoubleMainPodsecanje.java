@@ -8,13 +8,14 @@ public class DoubleMainPodsecanje {
 		
 		
 		doubleLinked.append(2);
-		doubleLinked.append(23);
-		doubleLinked.append(24);
-		doubleLinked.append(222);
-		doubleLinked.removeLast();
-		doubleLinked.removeFirst();
-		
-		doubleLinked.prependNode(444);
+		doubleLinked.append(3);
+		doubleLinked.append(4);
+		doubleLinked.append(5);
+
+		System.out.println("GET CALLED RETURN = " + doubleLinked.get(0).value);
+		doubleLinked.set(3, 333);
+		doubleLinked.insert(3, 1005);
+
 		
 		doubleLinked.printList();
 		doubleLinked.getHead();
