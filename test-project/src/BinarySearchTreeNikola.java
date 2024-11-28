@@ -113,10 +113,25 @@ public class BinarySearchTreeNikola {
 		return newNode;
 	}
 	
+	/*
+	 * Pseodo primer
+	 * 
+	 * 1,) Ako je root = null return false;
+	 * 2.) U metodi hvatamo current root node ( Node corrent = this.root)
+	 * 
+	 * svaki korak ispod se izvrsava u while loop
+	 * 3.) while loop(sve dok root nije null)
+	 * 4.) if value == current.value ) returns; // ako odmah pronadje izlazi iz petlje 
+	 * 5.) if( < left || >right) ako je manji na levo idi levo po cvoru i obrnuto za desno
+	 * 6.) ako ga pronadje vratice se na stavku 4.) i izacice iz while loop
+	 * 7.) false => ako nije nasao nista znaci da ne postoji 
+	 */
+	
 	public boolean contains(int value) {
 		// znaci da je prazan i da ne sadrzi
-		if (root == null)
-			return false;
+		if (root == null)return false;
+		
+		
 		// node ako kreiramo ovde cemo da kreiramo copy vrednost njegovu da proveravamo
 		Node currentNode = this.root;
 		while (currentNode != null) {
@@ -132,7 +147,6 @@ public class BinarySearchTreeNikola {
 				currentNode = currentNode.right;
 			}
 		}
-		// Ako smo izašli iz petlje, vrednost nije pronađena
 		System.out.println("There is no value in tree");
 		return false;
 	}
