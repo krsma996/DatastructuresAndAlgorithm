@@ -1,5 +1,8 @@
 package hashTable;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /*
  * Kada kažemo da je hash deterministički, to znači da će ista 
  * ulazna vrednost uvek proizvoditi isti izlaz (hash vrednost) 
@@ -69,12 +72,63 @@ public class Hash {
 		public Node(String key, int value) {
 			this.key = key;
 			this.value = value;
-		}
-		
-		
+		}	
 	}
 	
 	
+	
+	private int hash(String key) {
+		
+		int hash = 0;
+		char [] charKeys = key.toCharArray();
+		for(int i = 0; i< charKeys.length;i++) {
+			int asciValue = charKeys[i];
+			//mnozimo svaki character u nizu sa asci vrednoscu i sa prostim brojem
+			//moze bilo koji prost broj nije ni bitno
+			//i onda od tog rezultata trazimo da node van opsega niza dataMap.lenght u mom slucaju je 6 al on moze biti i veci nije ni bitnos
+			// i onda za svaki charater mi dobijamo hash key UVEK ISTI !
+			hash = ( hash + asciValue * 23) % dataMap.length;
+		}
+		return hash;
+	}
+	
+	public void set(String key,int value) {
+		int index = hash(key);
+		Node newNode = new Node(key, value);
+		if(dataMap[index] == null) {
+			dataMap[index] = newNode;
+		}else {
+			//pointer na prvi node  u nizu
+			Node temp = dataMap[index];
+			while(temp.next !=null) {
+				temp = temp.next;
+			}
+			temp.next = newNode;
+		}
+		
+	}
+	
+	public int get(String key) {
+		int index = hash(key);
+		Node tempNode = this.dataMap[index];
+		if(tempNode !=null) {
+			return tempNode.value;
+		}
+		return 0;
+	}
+	
+	public List<String> keys() {
+		List<String> allkeys = new ArrayList<>();
+		Node []tempNodes = this.dataMap;
+		for(int i = 0;i < tempNodes.length;i++) {
+			Node tempNode = this.dataMap[i];
+			if(tempNode !=null) {
+				allkeys.add(tempNode.key);
+				tempNode = tempNode.next;
+			}
+		}
+		return allkeys;
+	}
 	
 	public void printHash() {
 		Node []tempNodes = this.dataMap;
