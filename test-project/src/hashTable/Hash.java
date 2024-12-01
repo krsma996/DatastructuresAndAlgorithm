@@ -65,6 +65,7 @@ public class Hash {
 	}
 	
 	class Node {
+		
 		private String key;
 		private int value;
 		private Node next;
@@ -75,7 +76,12 @@ public class Hash {
 		}	
 	}
 	
-	
+	/*
+	 * Ova metoda sluzi samo da hashuje KEYS u mapi samoj sto znaci
+	 * mnozi svaki Charater u nizu sa ASCI vrednoscu i sa PROSTIM BROJEM
+	 * PRosti broj moze da bude bili koji dakle od 1 2 i skoro svi neparni brojevi nebitno koji god stavili tamo da se izracunava
+	 * 
+	 */
 	
 	private int hash(String key) {
 		
