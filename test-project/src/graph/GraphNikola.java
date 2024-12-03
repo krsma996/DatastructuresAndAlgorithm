@@ -100,7 +100,7 @@ public class GraphNikola {
 	
 	
 	public boolean addVertex(String vertex) {
-		//Which means that vertex is not already in grafh
+		//Which means that vertex is not in grafh
 		if(adjList.get(vertex) == null) {
 			adjList.put(vertex, new ArrayList<String>());
 			return true;

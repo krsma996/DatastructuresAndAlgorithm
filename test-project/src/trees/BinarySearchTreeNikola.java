@@ -1,4 +1,7 @@
 package trees;
+
+
+
 /*
 Binarno drvo (Binary Tree): Specifičan tip drveta gde svaki čvor ima najviše dva potomka, 
 obično označena kao levi čvor (left node) i desni čvor (right node). 
@@ -150,6 +153,24 @@ public class BinarySearchTreeNikola {
 		}
 		System.out.println("There is no value in tree");
 		return false;
+	}
+	
+	public Node contains2(int value) {
+		if(root == null) return null;
+		Node temp = this.root;
+		while(temp !=null) {
+			if(value == temp.value) {
+				System.out.println("It contains !");
+				return temp;
+			}
+			if(value < temp.left.value) {
+				temp = temp.left;
+			}
+			if(value > temp.right.value) {
+				temp = temp.right;
+			}
+		}
+		return temp;
 	}
 	
 	
