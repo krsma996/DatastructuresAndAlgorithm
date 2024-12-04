@@ -136,6 +136,20 @@ public class Hash {
 		return allkeys;
 	}
 	
+	public List<Integer> values() {
+		List<Integer> allvalues = new ArrayList<>();
+		Node []tempNodes = this.dataMap;
+		for(int i = 0;i < tempNodes.length;i++) {
+			Node tempNode = this.dataMap[i];
+			if(tempNode !=null) {
+				allvalues.add(tempNode.value);
+				tempNode = tempNode.next;
+			}
+		}
+		return allvalues;
+	}
+	
+	
 	public void printHash() {
 		Node []tempNodes = this.dataMap;
 		for(int i = 0;i < tempNodes.length;i++) {

@@ -20,8 +20,8 @@ public class HashMain {
 		
 		hash.printHash();
 		System.out.println(hash.get("Nikola"));
-		List<String> keys = hash.keys();
-		for (String string : keys) {
+		List<Integer> keys = hash.values();
+		for (Integer string : keys) {
 			System.out.println(string);
 		}
 }

@@ -6,17 +6,17 @@ public class Test1 {
 		
 		
 		BstRekurzija tree1 = new BstRekurzija();
-		tree1.rInsert(1);
-		tree1.rInsert(2);
-		tree1.rInsert(3);
-		tree1.rInsert(4);
-		tree1.rInsert(5);
+		tree1.rInsert(122);
+		tree1.rInsert(22);
+		tree1.rInsert(33);
+		tree1.rInsert(44);
+		tree1.rInsert(55);
+		
+		
+		
+		tree1.rDelete(33);
 		
 		tree1.printInOrder();
-		
-		
-		
-	
 		
 		
 	//	System.out.println(saberi(1));

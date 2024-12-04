@@ -65,6 +65,8 @@ public class HeapNikola {
 		//samo ako vrednost od currentValeu veci od parent curent value 
 		//tad mozemo da okinemo while loop
 		//heaps.get(currentValue) vraca ti vrednost na tom indexu
+		//prvi uslov kaze trenutni index veci od 0  i trenitna vrednost od tog indexa veca od parenta njegovo
+		//ako jeste to mora da se swapuje
 		while (currentIndex > 0 && heaps.get(currentIndex) > heaps.get(parent(currentIndex))) {
 			swap(currentIndex, parent(currentIndex));
 			currentIndex = parent(currentIndex);
