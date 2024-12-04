@@ -28,36 +28,12 @@ public class BstRekurzija {
 		}else {
 			 currentNode.right = rInsert(currentNode.right,value);
 		}
-		return currentNode;
-		
+		return currentNode;	
 	}
 	
 	public Node rInsert(int value) {
 		root = rInsert(root, value);
 		return root;
-	}
-
-
-	public boolean contains(int value) {
-		// znaci da je prazan i da ne sadrzi
-		if (root == null)return false;
-		// node ako kreiramo ovde cemo da kreiramo copy vrednost njegovu da proveravamo
-		Node currentNode = this.root;
-		while (currentNode != null) {
-			if (value == currentNode.value) {
-				// Pronađena vrednost
-				System.out.println("It contains!");
-				return true;
-			} else if (value < currentNode.value) {
-				// Idi u levo podstablo
-				currentNode = currentNode.left;
-			} else {
-				// Idi u desno podstablo
-				currentNode = currentNode.right;
-			}
-		}
-		System.out.println("There is no value in tree");
-		return false;
 	}
 	
 	// a ovo govno se stalno poziva rekuzivno
