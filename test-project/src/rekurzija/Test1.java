@@ -14,7 +14,7 @@ public class Test1 {
 		
 		
 		
-		tree1.rDelete(33);
+		tree1.rDelete(55);
 		
 		tree1.printInOrder();
 		
