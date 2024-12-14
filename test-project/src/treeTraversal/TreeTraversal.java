@@ -22,8 +22,10 @@ pa desno dole childrene  i tako do kraja . Dakle Root- Siblings (Levi -> Sibling
 BFS funkcioniše tako što kreće od početnog čvora (ili korena stabla) i prelazi sve njegove neposredne susede, 
 zatim prelazi na susede tih suseda, i tako dalje, dok se svi čvorovi ne posete
 2.)
-Depth First Search je kada krenemo skrooz levo na stablu i najevli moguci i onda se penjamo polako kupimo njegove parente i siblinge pa tako sve do
-root-a gore pa onda od ROOT-a koji je 1 krenemo ponovo u dubinu sa desne strane najlevlje i isto od child pa njegov parent koji su povezani pa tako sve 
+Depth First Search je kada krenemo skrooz levo na stablu i najevli moguci 
+i onda se penjamo polako kupimo njegove parente i siblinge pa tako sve do
+root-a gore pa onda od ROOT-a koji je 1 krenemo ponovo u dubinu sa desne strane najlevlje 
+i isto od child pa njegov parent koji su povezani pa tako sve 
 u krug do vrha. Dakle krece iz dubine pa do vrha
 
 
