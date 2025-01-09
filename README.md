@@ -41,7 +41,10 @@ void printNumbers(int n) {
     }
 }
 The complexity of this function is O(n), because the number of operations grows proportionally to n. As the input size increases, the execution time increases as well
+```
+
 🏎️ Rule: Drop the Constants ⚡
 When analyzing Big O, we focus on the most significant terms and ignore constants to simplify the complexity.
 
 Feel free to explore and see how these structures and algorithms are implemented in my repository!🚀
+
