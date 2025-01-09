@@ -34,4 +34,4 @@ Explore the wide variety of:
 
 ---
 
-Start your DSA journey today and master the foundations of efficient problem-solving! 🚀
+Complete records of tracking my practice of DSA and Algorythms! 🚀
