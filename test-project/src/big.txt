@@ -24,7 +24,7 @@
 				 * Space Complexity )
 				 * 
 				  Time complexiti se ne meri po vremenu jer ako bi uzeo isti taj kod i pokrenuo ga na jacoj masini
-				  i ako ga on izvrsi za duplo manje vremena to znaci da je kod dobar to znaci da je kompijuter samo bolji
+				  i ako ga on izvrsi za duplo manje vremena to ne znaci da je kod dobar to znaci da je kompijuter samo bolji
 				  Dakle merise po broju operacija kome je potrebno da izvrzi neki zadatak
 				 */
 
