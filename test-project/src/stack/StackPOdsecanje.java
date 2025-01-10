@@ -4,7 +4,7 @@ package stack;
 
 // Za stack kao teniska kutija za loptice
 // PUSH i POP 
-//FIRST IN LAST OUT => FILO !
+//LIFO -> LAST IN first OUT !
 public class StackPOdsecanje {
 	
 	int value;

@@ -166,7 +166,7 @@ public class LinkedListNikola {
 		tail = tempHead;
 		
 		Node prethodniNode = null;
-		Node sledbeniNode = tempHead.next;
+		Node sledbeniNode = tempHead;
 		
 		for(int i = 0; i< lenght; i++) {
 			sledbeniNode = tempHead.next;
