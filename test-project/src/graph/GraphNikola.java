@@ -141,6 +141,8 @@ public class GraphNikola {
 		}
 		//deluje zbunjujce al kad se hvata preko hashMape po key on ti da values a tebi je values u ovom slcuaju lista
 		for(String otherVertex :adjList.get(node)) {
+			//U sustini kad kazes removeNode("D");
+			//po posto je "D" key on vrati vrednost u tvom slucaju je adjList hashMapa sa key Stringovima i values Lista
 			//ovo ce ti vrati arrayList i mozes metode da koristsi
 			//krenuce od prvog a to je A={A,B,C,D} ovo D se brise iz ove ivice
 			//pa ide onda do B a to je B={B,C,D} dakle lupam dajem primere nekog grafa obbrisace D 
