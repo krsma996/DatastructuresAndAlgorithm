@@ -4,12 +4,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 /*
- * Svako drvo zavisi od speicifcne implementacije
- * 
- * 
  * Heaps su posebna vrsta binarnih stabala koja imaju specifična pravila o rasporedu čvorova. 
+ *
  * Da, na prvi pogled mogu izgledati kao obična binarna stabla, ali postoje ključne razlike koje im daju snagu za određene primene
  * 
+ * Svako drvo zavisi od speicifcne implementacije
  * Razlike između heap-a i običnog binarnog stabla:
    1.) Raspored Cvorova - U binarnom stablu nema stroge pravilnosti o rasporedu vrednosti, 
    	  dok u heap-u postoji striktno pravilo o veličini između roditelja i potomaka (max ili min heap svojstvo)
