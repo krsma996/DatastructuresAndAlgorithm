@@ -59,7 +59,7 @@ public class HeapNikola {
 	
 	public void insert(int value) {	
 		heaps.add(value);
-		int currentIndex = heaps.size() - 1;// daje ti index od tog zadnjeg sto si dodao
+		int currentIndex = heaps.size() - 1;// ovaj currentIndex ti pokazuje na zadnju dodatu vrednosti u listi
 		
 		//samo ako vrednost od currentValeu veci od parent curent value 
 		//tad mozemo da okinemo while loop
