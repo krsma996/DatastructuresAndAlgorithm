@@ -61,14 +61,15 @@ public class HeapNikola {
 		heaps.add(value);
 		int currentIndex = heaps.size() - 1;// ovaj currentIndex ti pokazuje na zadnju dodatu vrednosti u listi
 		
-		//samo ako vrednost od currentValeu veci od parent curent value 
-		//tad mozemo da okinemo while loop
+		//samo ako je currentIndex veci od 0 ( TO ZNACI DA ima nesto u toj listi)
+		//i vrednost od tog currentIndexa koji je dodat veci od njegovog parenta currentIndexa 
+		//tad mozemo da okinemo while loop i da radimo swapovanje njihovo
 		//heaps.get(currentValue) vraca ti vrednost na tom indexu
-		//prvi uslov kaze trenutni index veci od 0  i trenitna vrednost od tog indexa veca od parenta njegovo
+		//prvi uslov kaze trenutni index veci od 0  i trenutna vrednost od tog indexa veca od parenta njegovo
 		//ako jeste to mora da se swapuje
 		while (currentIndex > 0 && heaps.get(currentIndex) > heaps.get(parent(currentIndex))) {
-			swap(currentIndex, parent(currentIndex));
-			currentIndex = parent(currentIndex);
+			swap(currentIndex, parent(currentIndex));//kad se gore doda vrednost u listi taj poslednji ovde ce da odradi swap sa parentom njegovim
+			currentIndex = parent(currentIndex); // a ovde ce da taj current koji pokazuje na kraju da ga gure sve ka vrhu gore
 		}	
 	}
 	
@@ -138,10 +139,12 @@ public class HeapNikola {
 	private int rightChild(int index) {
 		return 2 * index + 2;
 	}
+	
 	//trazimo parent node od children nodova 
 	private int parent (int index ) {
 		return (index - 1 ) / 2;
 	}
+	
 	//metoda zamene sto znaci u heapu mora da parenti budu veci od childrena i ako se desi da je children veci od parenta ide SWAP
 	//i ok je da imaju duplikate nista sporno takvo je neko pravilo za heapove
 	private void swap(int index1, int index2) {
