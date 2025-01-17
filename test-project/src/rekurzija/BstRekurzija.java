@@ -98,10 +98,10 @@ public class BstRekurzija {
 			// i onda ce parent node da pokazuje na taj 23 CURRENT NODE  a 22 pokazuje na prazno i bice garbage collected
 			
 			}else if(currentNode.left == null) {
-				return currentNode.right;
+				currentNode = currentNode.right;
 			//3.) isto vazi i sa slucaj 2 
 			}else if(currentNode.right == null) {
-				return  currentNode.left;
+				currentNode =  currentNode.left;
 			}  else {
 	            // Nađi najmanji čvor u desnom podstablu
 	            Node minNode = findMin(currentNode.right);

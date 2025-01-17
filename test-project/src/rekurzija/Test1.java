@@ -14,12 +14,13 @@ public class Test1 {
 		
 		
 		
-		tree1.rDelete(55);
+		tree1.rDelete(44);
 		
 		tree1.printInOrder();
 		
 		
 	//	System.out.println(saberi(1));
+	//		System.out.println(factoriel(4));
 	}
 
 	public static int saberi(int n) {
@@ -30,5 +31,12 @@ public class Test1 {
 		}
 
 		
+	}
+	
+	public static int factoriel(int n) {
+		if(n == 1) {
+			return 1;
+		}
+		return n*factoriel(n-1);
 	}
 }
