@@ -60,6 +60,130 @@ public class TreeTraversal {
 
 	}
 
+	public List<Integer> BFS() {
+		Node currentNode = this.root;
+		Queue<Node> que = new LinkedList<Node>();
+		List<Integer> result = new ArrayList<>();
+
+		que.add(currentNode);
+
+		while (que.size() > 0) {
+			currentNode = que.remove();
+			result.add(currentNode.value);
+			if (currentNode.left != null) {
+				que.add(currentNode.left);
+			}
+			if (currentNode.right != null) {
+				que.add(currentNode.right);
+			}
+		}
+		return result;
+	}
+
+	// 1.) nacin jeste samo da se zameni umesto que ide stack
+	public List<Integer> DFSPreOrder() {
+		Node currentNode = this.root;
+		List<Integer> results = new ArrayList<>();
+		Stack<Node> stack = new Stack<>();
+
+		stack.push(currentNode);
+
+		while (stack.size() > 0) {
+			currentNode = stack.pop();
+			results.add(currentNode.value);
+
+			// Prvo dodajte desno, pa levo
+			if (currentNode.right != null) {
+				stack.push(currentNode.right);
+			}
+			if (currentNode.left != null) {
+				stack.push(currentNode.left);
+			}
+		}
+
+		return results;
+	}
+
+	// u javi jedini nacin da metoda koja ima u sebi drugu metodu deklarisanu jeste
+	// da se napravi usrana klasa u njoj
+	public ArrayList<Integer> DFSPreOrderRecursion() {
+
+		ArrayList<Integer> results = new ArrayList<>();
+		class Traverse {
+			// u samom konstrutkoru klase se izvrsava ovo
+			Traverse(Node currentNode) {
+				results.add(currentNode.value);
+				// dakle ovo okida prvo CELO levo stablo
+				if (currentNode.left != null) {
+					new Traverse(currentNode.left);
+				}
+				// pa posle okida ovo
+				if (currentNode.right != null) {
+					new Traverse(currentNode.right);
+				}
+			}
+		}
+		// mora se ovako pozove da bi se konstruktor klase pozvao
+		new Traverse(root);
+		return results;
+	}
+
+	public ArrayList<Integer> DFSPostOrderRecursion() {
+		ArrayList<Integer> results = new ArrayList<>();
+
+		class Traverse {
+			Traverse(Node currentNode) {
+				if (currentNode.left != null) {
+					new Traverse(currentNode.left);
+				}
+				if (currentNode.right != null) {
+					new Traverse(currentNode.right);
+				}
+				results.add(currentNode.value);
+			}
+		}
+
+		new Traverse(root);
+		return results;
+	}
+
+	public List<Integer> DFSPostOrder() {
+		Node currentNode = this.root;
+		List<Integer> values = new ArrayList<>();
+		if (currentNode == null) return values;
+		Stack<Node> stack = new Stack<>();
+		Stack<Node> output = new Stack<>();
+		stack.push(currentNode);
+		
+		while (!stack.isEmpty()) {
+			currentNode = stack.pop();
+	        output.push(currentNode);
+			if (currentNode.left != null) {
+				stack.push(currentNode.left);	
+			}
+			if (currentNode.right != null) {
+				stack.push(currentNode.right);
+			}	
+		}
+		while(!output.isEmpty()) {
+			values.add(output.pop().value);
+		}
+		return values;
+	}
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	public Node rInsert(int value) {
 		root = rInsert(root, value);
 		return root;
@@ -73,80 +197,6 @@ public class TreeTraversal {
 		return rDelete(root, value);
 	}
 
-	public List<Integer> BFS(){
-		Node currentNode = this.root;
-		Queue<Node> que = new LinkedList<Node>();
-		List<Integer> result = new ArrayList<>();
-		
-		que.add(currentNode);
-		
-		while(que.size() > 0) {
-			currentNode = que.remove();
-			result.add(currentNode.value);
-			if(currentNode.left != null) {
-				que.add(currentNode.left);
-			}
-			if(currentNode.right !=null) {
-				que.add(currentNode.right);
-			}			
-		}
-		return result;		
-	}
-	
-	// 1.) nacin jeste samo da se zameni umesto que ide stack
-	public List<Integer> DFSPreOrder(){
-		Node currentNode = this.root;
-		List<Integer> results = new ArrayList<>();
-		Stack<Node> stack = new Stack<>();
-		
-		stack.push(currentNode);
-		
-		while(stack.size() > 0 ) {
-		currentNode = stack.pop();
-			results.add(currentNode.value);
-
-			   // Prvo dodajte desno, pa levo
-	        if (currentNode.right != null) {
-	            stack.push(currentNode.right);
-	        }
-	        if (currentNode.left != null) {
-	            stack.push(currentNode.left);
-	        }
-		}
-		
-		return results;
-	}
-
-	//u javi jedini nacin da metoda koja ima u sebi drugu metodu deklarisanu jeste 
-	//da se napravi usrana klasa u njoj 
-	 public ArrayList<Integer> DFSPreOrderRecursion() {
-	      
-		 ArrayList<Integer> results = new ArrayList<>();
-	        class Traverse {
-	        	//u samom konstrutkoru klase se izvrsava ovo
-	            Traverse(Node currentNode) {
-	                results.add(currentNode.value);
-	                if (currentNode.left != null) {
-	                    new Traverse(currentNode.left);
-	                }
-	                if (currentNode.right != null) {
-	                    new Traverse(currentNode.right);
-	                }
-	            }
-	        }
-	        // mora se ovako pozove da bi se konstruktor klase pozvao
-	        new Traverse(root);
-	        return results;
-	    }
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	private Node rInsert(Node currentNode, int value) {
 
 		if (currentNode == null)

@@ -15,10 +15,15 @@ public class Test1Main {
 		tree1.rInsert(82);
 		
 		System.out.println(tree1.BFS());
-		System.out.println("-------------------------------");
+		System.out.println("------------------------------- BFS");
 		System.out.println(tree1.DFSPreOrder());
-		System.out.println("-------------------------------");
+		System.out.println("------------------------------- DFS PRE ORDER");
 		System.out.println(tree1.DFSPreOrderRecursion());
+		System.out.println("------------------------------- DFS PRE ORDER WITH RECURSION");	
+		System.out.println(tree1.DFSPostOrderRecursion());
+		System.out.println("------------------------------- DFS POST ORDER RECURSION");
+		System.out.println(tree1.DFSPostOrder());
+		System.out.println("------------------------------- DFST POST ORDER NORMAL");
 	}
 
 }
