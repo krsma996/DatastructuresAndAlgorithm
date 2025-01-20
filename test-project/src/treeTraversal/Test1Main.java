@@ -24,6 +24,10 @@ public class Test1Main {
 		System.out.println("------------------------------- DFS POST ORDER RECURSION");
 		System.out.println(tree1.DFSPostOrder());
 		System.out.println("------------------------------- DFST POST ORDER NORMAL");
+		System.out.println(tree1.DFSInOrderRecursion());
+		System.out.println("------------------------------- DFST IN ORDER RECURSION");
+		System.out.println(tree1.DFSInOrderNormal());
+		System.out.println("------------------------------- DFST IN ORDER Normal");
 	}
 
 }

@@ -172,10 +172,48 @@ public class TreeTraversal {
 	}
 
 	
+	public ArrayList<Integer> DFSInOrderRecursion() {
+		ArrayList<Integer> results = new ArrayList<>();
+
+		class Traverse {
+			Traverse(Node currentNode) {
+				if (currentNode.left != null) {
+					new Traverse(currentNode.left);
+				}
+				results.add(currentNode.value);
+				if (currentNode.right != null) {
+					new Traverse(currentNode.right);
+				}		
+			}
+		}
+		new Traverse(root);
+		return results;
+	}
 	
-	
-	
-	
+	public ArrayList<Integer> DFSInOrderNormal() {
+	    ArrayList<Integer> results = new ArrayList<>();
+	    if (this.root == null) return results;
+
+	    Stack<Node> stack = new Stack<>();
+	    Node currentNode = this.root;
+
+	    while (currentNode != null || !stack.isEmpty()) {
+	        if (currentNode != null) {
+	            // Idi u levo podstablo
+	            stack.push(currentNode);
+	            currentNode = currentNode.left;
+	        } else {
+	            // Obradi čvor
+	            currentNode = stack.pop();
+	            results.add(currentNode.value);
+	            // Idi u desno podstablo
+	            currentNode = currentNode.right;
+	        }
+	    }
+	    return results;
+	}
+
+
 	
 	
 	
