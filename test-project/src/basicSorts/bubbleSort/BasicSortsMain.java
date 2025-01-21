@@ -9,6 +9,9 @@ public class BasicSortsMain {
         int temp = 0;
         boolean swapped;
 
+        //a buble sort je mozda po space complexity dobar jer na istoj adresi radi swapovanje 
+        // al je kriminalan algoritam sam po sebi
+        // svaki element se swapuje sve do vrha 
         for (int i = 0; i < array1.length - 1; i++) { // Ispravljen uslov
         	swapped = false;
         	for(int j = 0; j < array1.length - 1;j++) {
