@@ -1,4 +1,4 @@
-package leetcodeExercise;
+package leetcodeExercise.easy;
 
 public class RemoveDuplicatesFromSortedArray {
 
