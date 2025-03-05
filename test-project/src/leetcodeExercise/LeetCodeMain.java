@@ -2,7 +2,7 @@ package leetcodeExercise;
 
 import java.util.ArrayList;
 
-public class kurac {
+public class LeetCodeMain {
 
 	public static void main(String[] args) {
 

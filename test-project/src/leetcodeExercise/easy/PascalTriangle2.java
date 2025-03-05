@@ -23,7 +23,11 @@ public class PascalTriangle2 {
 			newRow.add(1); // Početak reda je uvek 1
 
 			// Popunjavaj red sa zbirima prethodnih elemenata
+			//i isto kao i kod prethodnog usranog paskala nece ti prvi put obraditi unutrasnju
+			//jer je i = 1 i nije veci od size tek kada ubaci drugu 1 e onda ulazi i
+			//ubacuje ti rezultate
 			for (int j = 1; j < result.size(); j++) {
+				//ovde ce dodati rezultat
 				newRow.add(result.get(j) + result.get(j - 1));
 			}
 
