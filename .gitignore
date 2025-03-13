@@ -1,0 +1,81 @@
+# Ignoriši sve binarne fajlove
+*.exe
+*.dll
+*.so
+*.dylib
+*.o
+*.a
+*.lib
+*.bin
+*.dat
+*.tmp
+*.swp
+*.swo
+*.log
+*.lock
+*.db
+*.class
+*.pyc
+*.pyo
+*.out
+*.elf
+*.ncb
+*.sdf
+*.suo
+*.pdb
+*.idb
+*.obj
+*.pch
+*.ilk
+*.res
+*.mod
+*.pyc
+*.pyo
+
+# Ignoriši IDE foldere
+.idea/
+.vscode/
+*.iml
+
+# Ignoriši build foldere
+bin/
+obj/
+build/
+dist/
+target/
+out/
+debug/
+release/
+
+# Java-specific
+*.jar
+*.war
+*.ear
+*.class
+
+# C# / .NET
+*.exe
+*.dll
+*.pdb
+*.mdb
+*.cache
+*.csproj.user
+
+# Unreal Engine
+*.generated.*
+Binaries/
+Build/
+DerivedDataCache/
+Intermediate/
+Saved/
+*.uproject.user
+
+# Unity Engine
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+UserSettings/
+MemoryCaptures/
