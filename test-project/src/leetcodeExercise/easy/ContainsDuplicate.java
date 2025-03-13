@@ -36,5 +36,18 @@ public class ContainsDuplicate {
 			return true;
 		}
 	}
+	
+	// i ovo je ok cim naidje na duplikat vrati true
+	//ne treba ti counter ni nista od kuraca gore sto je isto ok
+	// chatpgt je odradio isto bolje al jbg 
+	public static boolean containtsDuplicateBetter(int [] nums) {
+		Arrays.sort(nums);
+		for(int i = 1;i<=nums.length-1;i++) {
+			if(nums[i] == nums[i-1]) {
+				return true;
+			}
+		}
+		return false;
+	}
 
 }
