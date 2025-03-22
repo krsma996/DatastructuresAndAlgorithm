@@ -13,9 +13,9 @@ public class SummaryRanges {
 	}
 
 	/*
-	 * Uzastopni brojevi su oni gde je razlika između susednih brojeva tačno 1.
+	 * Uzastopni brojevi su oni gde je razlika izmeÄ‘u susednih brojeva taÄ�no 1.
 	 * 
-	 * Praktično, samo tražimo gde se niz prekida i tu završavamo opseg, pa
+	 * PraktiÄ�no, samo traÅ¾imo gde se niz prekida i tu zavrÅ¡avamo opseg, pa
 	 * nastavljamo novi.
 	 * 
 	 * Poenta je ovo zadatka je zapravo mnogo kretenska ti imas gore niz 0 , 1, 2, 4,5,7
@@ -36,6 +36,9 @@ public class SummaryRanges {
 		brojevi 1 do 5 uzastopni
 		brojevi od 100 do 102 uzastopni
 		i glupi 200
+		
+		
+		0, 1, 2, 4, 5, 7 
 	 * 
 	 */
 	public static List<String> summaryRanges(int[] nums) {
@@ -43,7 +46,7 @@ public class SummaryRanges {
 		if (nums.length == 0)
 			return result; // Ako je niz prazan
 
-		int start = nums[0]; // Početni broj opsega
+		int start = nums[0]; // PoÄ�etni broj opsega
 
 		for (int i = 1; i <= nums.length; i++) {
 			// Ako smo na kraju niza ili broj nije uzastopan
@@ -54,7 +57,7 @@ public class SummaryRanges {
 				} else {
 					result.add(start + "->" + nums[i - 1]);
 				}
-				// Početak novog opsega
+				// PoÄ�etak novog opsega
 				if (i < nums.length) {
 					start = nums[i];
 				}
