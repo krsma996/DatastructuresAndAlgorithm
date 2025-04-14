@@ -13,9 +13,9 @@ public class SummaryRanges {
 	}
 
 	/*
-	 * Uzastopni brojevi su oni gde je razlika izmeÄ‘u susednih brojeva taÄ�no 1.
+	 * Uzastopni brojevi su oni gde je razlika izmedju susednih brojeva tacno 1.
 	 * 
-	 * PraktiÄ�no, samo traÅ¾imo gde se niz prekida i tu zavrÅ¡avamo opseg, pa
+	 * Prakticnono, samo traÅ¾imo gde se niz prekida i tu zavrÅ¡avamo opseg, pa
 	 * nastavljamo novi.
 	 * 
 	 * Poenta je ovo zadatka je zapravo mnogo kretenska ti imas gore niz 0 , 1, 2, 4,5,7

@@ -7,7 +7,7 @@ public class SearchInsertPosiitonMain {
 		int target = 5;
 		int target2 = 2;
 
-		int founded = searchInsert(nums, target);
+		int founded = searchInsert(nums, target2);
 		System.out.println(founded);
 
 	}

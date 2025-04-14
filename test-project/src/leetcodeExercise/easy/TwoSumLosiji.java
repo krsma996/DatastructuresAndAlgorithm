@@ -1,8 +1,5 @@
 package leetcodeExercise.easy;
 
-import java.util.HashMap;
-import java.util.Map;
-
 public class TwoSumLosiji {
 
 	public static void main(String[] args) {
