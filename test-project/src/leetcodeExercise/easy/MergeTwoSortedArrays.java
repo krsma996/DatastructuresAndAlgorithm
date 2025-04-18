@@ -3,10 +3,8 @@ package leetcodeExercise.easy;
 public class MergeTwoSortedArrays {
 
 	public static void main(String[] args) {
-		int array1[] = { 55, 22, 3,0,0,0 };
-		int array2[] = { 2, 5, 6 };
-
-		//int rezUltArray[] = merge(array1, array2);
+		int array1[] = { 3, 22, 55, 0, 0, 0 }; // m = 3
+		int array2[] = { 2, 5, 6 };            // n = 3
 		merge(array1, 3, array2, 3);
 		
 		for(int i = 0;i<=array1.length-1;i++) {
@@ -16,6 +14,8 @@ public class MergeTwoSortedArrays {
 
 	}
 
+	//pazi ovo je ok sto sam uradio ali ukljucje i 0 gore u nizu koje imas u niz1
+	// ovde je poenta da na te 0 zamenis elemenita iz niza2
 	private static int[] merge22(int[] array1, int[] array2) {
 		// novi niz koji ce da ima 6 elemenata
 		int rezult[] = new int[array1.length + array2.length];
@@ -52,20 +52,27 @@ public class MergeTwoSortedArrays {
 	public static void merge(int[] nums1, int m, int[] nums2, int n) {
 	    int lastElementNum1 = m - 1; // poslednji element u nums1 (korisni deo)
 	    int lastElementNum2 = n - 1; // poslednji element u nums2
-	    int lastIndexNums1 = m + n - 1; // poslednji indeks u nums1
+	    int lastIndexNums1 = m + n - 1; // poslednji indeks u nums1 gadjes ovde one 0 njegove jer su bitne njih menjas dole u kodu
 
-	    while (lastElementNum2 >= 0) {
+	    while (lastElementNum2 >= 0) {	
 	    	//if kaze sve dok vrtimo elementa u indexima poslednje veci od 0
 	    	//i onda radimo nekakvu vrstu sortiranja dali je broj iz nums1 niza na tom indexu njegova vrednost veca od nums2
 	        if (lastElementNum1 >= 0 && nums1[lastElementNum1] > nums2[lastElementNum2]) {
 	        	// poslednji vrednost u nums1 ce biti jednaka tom istooj vrednosti u num1 sto znaci stavljamo ga na pravo mesto
-	            nums1[lastIndexNums1--] = nums1[lastElementNum1--];
+	            nums1[lastIndexNums1] = nums1[lastElementNum1];
+	            lastIndexNums1--;
+	            lastElementNum1--;
 	        } else {
 	        	//poslednja vrednost u nums1 ce biti jednaka vrednosti iz nums2
-	            nums1[lastIndexNums1--] = nums2[lastElementNum2--];
+	            nums1[lastIndexNums1] = nums2[lastElementNum2];
+	            lastIndexNums1--;
+	            lastElementNum2--;
 	        }
 	    }
 	}
 
-
+/*
+ * 	int array1[] = { 55, 22, 3,0,0,0 };
+		int array2[] = { 2, 5, 6 };
+ */
 }
