@@ -56,6 +56,13 @@ public class ConvertSortedArrayIntoBst {
 		  		bice da je mid 1 ovde
 		  		i tako pici 
 		  		root.right = helper(nums, 1, right); 0 +1 je 1
+		  		
+		  		
+		  		i tako ide sve i pravi binarno stablo od obicnog niza 
+		  		uzima se srednja vrednost nejgova se izracunava
+		  		i onda trazimo pozicije i pozivamo rekuzivno sve dok left > 0 i tad null vratimo
+		  		pa onda idemo za desnu stranu
+		  		i sve dok left>right tad stajemo i popujemo ceo stack i dobijemo drvo 
 		  	
 		 */
 	}

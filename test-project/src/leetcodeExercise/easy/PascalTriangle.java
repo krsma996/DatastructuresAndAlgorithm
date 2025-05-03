@@ -28,7 +28,7 @@ public class PascalTriangle {
 		result.get(0).add(1);
 
 		for (int i = 1; i < numRows; i++) {
-			List<Integer> prev = result.get(i - 1); // Uzimamo prethodni red
+			List<Integer> prev = result.get(i - 1); // Uzimamo prethodni red niza [] dakle ne vrednost kao 1 broj nego get daj mi vrednost na tom indexu a vrednost ti je NIZ!!
 			List<Integer> newRow = new ArrayList<>();
 			newRow.add(1); // Svaki red počinje sa 1
 			//prvi uslov se nece izvrsiti  je moj ( j pocinje od 1 ) a size nije veci j < nije veci od 1 dakle 1 < 1 nije tacno
