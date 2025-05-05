@@ -4,6 +4,14 @@ import java.util.Arrays;
 
 public class RemoveElementMain {
 
+	/*
+	 * Ovde se isto trazi u zadataku da u IN-place obrises trazeni element 
+	 * dakle ponovo direktno u listi samoj bez nove da se kreira tu da se brise
+	 * 
+	 * ako imas niz {3,22,2,22,3}
+	 * ja kaze brisi 3 mora da vrati
+	 * {22,2,22,2} bez ove troje u nizu
+	 */
 	public static void main(String[] args) {
 		int niz1[] = {1,3,4,5,6};
 		removeElement(niz1,4);

@@ -44,5 +44,5 @@ public class PascalTriangle {
 		}
 		return result;
 	}
-
+	
 }

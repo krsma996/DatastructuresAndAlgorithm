@@ -47,6 +47,9 @@ public class MergeTwoSortedArrays {
 	 * n, where the first m elements denote the elements that should be merged, and
 	 * the last n elements are set to 0 and should be ignored. nums2 has a length of
 	 * n.
+	 * Non-decreasing order (neopadajući redosled) 
+	 * znači da se elementi ne smanjuju kako ideš s leva na desno — tj. 
+	 * svaki sledeći element je veći ili jednak prethodnom.
 	 */
 
 	public static void merge(int[] nums1, int m, int[] nums2, int n) {

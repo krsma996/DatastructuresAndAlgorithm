@@ -1,5 +1,7 @@
 package basicSorts.insertionSort;
 
+import java.util.Arrays;
+
 public class InsertionSortMain {
 
 	public static void main(String[] args) {
@@ -12,9 +14,7 @@ public class InsertionSortMain {
 		
 		insertionSortArray(niz);
 		
-		for (int i : niz) {
-			System.out.println(i);
-		}
+		System.out.println(Arrays.toString(niz));
 
 	}
 

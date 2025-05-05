@@ -2,20 +2,24 @@ package leetcodeExercise.easy;
 
 public class ConvertSortedArrayIntoBst {
 
+	//ovde se trazi da konvertujes sortirani niz u Binary Search tree
 	public static void main(String[] args) {
 		int nums[] = { 22, 33, 1, 225, 67, 78, 93 };
 		TreeNode bst = sortedArrayToBST(nums);
 		bst.printInOrder(bst);
 	}
-
+//ovde je pattern divide and conquer 
 	public static TreeNode sortedArrayToBST(int[] nums) {
 		return helper(nums, 0, nums.length - 1);
 	}
 
 	private static TreeNode helper(int[] nums, int left, int right) {
 		if (left > right)return null;
+		
 		int mid = (left + right) / 2;
 		TreeNode root = new TreeNode(nums[mid]);
+		//prvo punimo leva pa kad oddje gore do da je levo vece od desnog vraca se popujese
+		//iz steka pa onda ide u desno
 		root.left = helper(nums, left, mid - 1);
 		root.right = helper(nums, mid + 1, right);
 		return root;

@@ -2,6 +2,12 @@ package leetcodeExercise.easy;
 
 public class SearchInsertPosiitonMain {
 
+	/*
+	 * Ovde se trazi da u ovom nizu pronadjes INDEX elementa ako postoji u listi
+	 * a ako ne postoji da vidis de bi se on ubacio u kom tacnom mestu npr
+	 * {1,2,3}  ako je target 3 treba da ti vrati index [2]
+	 * a ako trazimo npr 4 a on ne postoji u nizu onda treba da ti vrati [3] index
+	 */
 	public static void main(String[] args) {
 		int nums[] = { 1, 3, 5, 6 };
 		int target = 5;
@@ -30,7 +36,9 @@ public class SearchInsertPosiitonMain {
 				return index-1;
 			}
 		}
-		return nums.length;
+		// a ako ga nije pronasao samo vrati tu duzinu nums.length
+		// ili samo taj index na kom bi on bio
+		return index;
 	}
 
 }
