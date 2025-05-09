@@ -11,42 +11,38 @@ public class SummaryRanges {
 		List<String> summaryNumbs = summaryRanges(nums);
 		System.out.println(Arrays.toString(summaryNumbs.toArray()));
 	}
-
 	/*
-	 * Uzastopni brojevi su oni gde je razlika izmedju susednih brojeva tacno 1.
-	 * 
-	 * Prakticnono, samo traÅ¾imo gde se niz prekida i tu zavrÅ¡avamo opseg, pa
+	 * Uzastopni brojevi su oni gde je razlika između susednih brojeva tačno 1.
+	 *
+	 * Praktično, samo tražimo gde se niz prekida i tu završavamo opseg, pa
 	 * nastavljamo novi.
-	 * 
-	 * Poenta je ovo zadatka je zapravo mnogo kretenska ti imas gore niz 0 , 1, 2, 4,5,7
-	 * 
-	 * dakle kada se vrti for petlja trazimo brojevi koji nisu uzastopni to znaci da 
-	 * brojevi koji kada se broje 0,1,2, idu redom jedan za drugim nema zastoja
-	 * a kada doddje do 4 tu je prekid jer iza 4 je 3 broj logicno prekinuo je brojanje 
-	 * i samo treba da ispise u rezultatu da su brojevi od 0->2 UZASTOPNI i da je ok
-	 * pa onda treba da kaze da su 4->5 UZASTOPNI 
-	 * 
-	 * i 7 na kraju da ispise poslednji broj to je sve
-	 * 
-	 * 2.) primer bi ti bio ovo
-	 * [1, 2, 3, 4, 5, 100, 101, 102, 200]
-		
-		bilo bi ti u ovom formatu
-		["1->5", "100->102", "200"]
-		brojevi 1 do 5 uzastopni
-		brojevi od 100 do 102 uzastopni
-		i glupi 200
-		
-		
-		0, 1, 2, 4, 5, 7 
-	 * 
+	 *
+	 * Poenta zadatka je zapravo jednostavna – imamo niz npr: 0, 1, 2, 4, 5, 7
+	 *
+	 * Kada se for petlja vrti, tražimo brojeve koji **nisu** uzastopni – to znači da
+	 * brojevi koji idu redom jedan za drugim (npr. 0,1,2) čine uzastopni niz.
+	 * Kada dođe do 4 (iza 2 je 4, a ne 3), tu se niz prekida.
+	 *
+	 * U rezultatu treba da ispišemo sledeće:
+	 * - "0->2" jer su 0,1,2 uzastopni
+	 * - "4->5" jer su 4,5 uzastopni
+	 * - "7" jer je to samostalan broj bez uzastopnih
+	 *
+	 * 2.) Drugi primer:
+	 * Ulaz: [1, 2, 3, 4, 5, 100, 101, 102, 200]
+	 * Rezultat: ["1->5", "100->102", "200"]
+	 * Objašnjenje:
+	 * - Brojevi od 1 do 5 su uzastopni
+	 * - 100 do 102 su uzastopni
+	 * - 200 je samostalan broj
 	 */
+
 	public static List<String> summaryRanges(int[] nums) {
 		List<String> result = new ArrayList<>();
 		if (nums.length == 0)
 			return result; // Ako je niz prazan
 
-		int start = nums[0]; // PoÄ�etni broj opsega
+		int start = nums[0]; // Pocetni broj opsega
 
 		for (int i = 1; i <= nums.length; i++) {
 			// Ako smo na kraju niza ili broj nije uzastopan
@@ -57,7 +53,7 @@ public class SummaryRanges {
 				} else {
 					result.add(start + "->" + nums[i - 1]);
 				}
-				// PoÄ�etak novog opsega
+				// Pocetak novog uzastopnog broja mora start promenljiva da se azurira
 				if (i < nums.length) {
 					start = nums[i];
 				}
