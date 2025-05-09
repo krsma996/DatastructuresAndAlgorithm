@@ -20,6 +20,7 @@ public class MissingNumber {
 	 * 1 iteracija 
 	 * res jeste 3 = i je 0  - nums[i] jeste 3 sto znaci
 	 * 3 + (0 - 3) = 3 - 3 = 0
+	 * dakle bude posle 3 + (-3) = 0   res = je 0
 	 * nums[0] je 3, pa oduzimamo 3 i res sada postaje 0
 	 * 
 	 * 2.) 2 iteracija ide ovako
